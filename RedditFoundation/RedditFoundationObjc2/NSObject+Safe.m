@@ -3,12 +3,16 @@
 //
 
 #import "NSObject+Safe.h"
-#import <RedditFoundationObjc/RedditFoundationDefines.h>
+
+@import RedditFoundationObjc;
+
+// #import <RedditFoundationObjc/RedditFoundationDefines.h>
 
 @implementation NSObject (Safe)
 
 - (void)red_safePerformSelector:(SEL)aSelector {
-  DebugAssert([self respondsToSelector:aSelector], @"selector non existing");
+  // DebugAssert([self respondsToSelector:aSelector], @"selector non existing");
+  [Foo new];
   if ([self respondsToSelector:aSelector]) {
     [self performSelector:aSelector];
   }
