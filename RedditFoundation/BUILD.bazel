@@ -1,5 +1,4 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_build_test")
-load("@//:module_map.bzl", "module_map")
 
 ios_build_test(
     name = "RedditFoundationObjc2SwiftTest",

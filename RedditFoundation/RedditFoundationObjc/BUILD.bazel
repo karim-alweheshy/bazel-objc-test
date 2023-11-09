@@ -1,15 +1,8 @@
 load("@build_bazel_rules_apple//apple:ios.bzl", "ios_build_test")
-load("@//:module_map.bzl", "module_map")
 
 redditFoundationObjc_hdrs = glob(
     ["**/*.h"]
 )
-
-# module_map(
-#     name = "RedditFoundationObjc-modulemap",
-#     hdrs = redditFoundationObjc_hdrs,
-#     module_name = "RedditFoundationObjc",
-# )
 
 objc_library(
     name = "RedditFoundationObjc",
