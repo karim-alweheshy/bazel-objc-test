@@ -12,7 +12,6 @@
 
 - (void)red_safePerformSelector:(SEL)aSelector {
   DebugAssert([self respondsToSelector:aSelector], @"selector non existing");
-  [Foo new];
   if ([self respondsToSelector:aSelector]) {
     [self performSelector:aSelector];
   }
