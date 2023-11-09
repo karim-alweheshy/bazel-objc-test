@@ -4,9 +4,10 @@
 
 #import "NSObject+Safe.h"
 
+// Either this
 @import RedditFoundationObjc;
-
-// #import <RedditFoundationObjc/RedditFoundationDefines.h>
+// Or this
+#import <RedditFoundationObjc/RedditFoundationDefines.h>
 
 @implementation NSObject (Safe)
 
