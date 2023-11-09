@@ -1,0 +1,37 @@
+load("@build_bazel_rules_apple//apple:ios.bzl", "ios_build_test")
+
+ios_build_test(
+    name = "RedditFoundationObjc2SwiftTest",
+    minimum_os_version = "14.0",
+    targets = [
+        ":RedditFoundationObjc2",
+    ],
+)
+
+objc_library(
+    name = "RedditFoundationObjc2",
+    deps = [":RedditFoundationObjc"],
+    srcs = glob(
+        ["ObjCLegacy2/**/*.m"]
+    ),
+    hdrs = glob(
+        ["ObjCLegacy2/**/*.h"]
+    ),
+    enable_modules = True,
+    module_name = "RedditFoundationObjc2",
+    visibility = ["//visibility:public"],
+)
+
+objc_library(
+    name = "RedditFoundationObjc",
+    deps = [],
+    srcs = glob(
+        ["ObjCLegacy/**/*.m"]
+    ),
+    hdrs = glob(
+        ["ObjCLegacy/**/*.h"]
+    ),
+    enable_modules = True,
+    module_name = "RedditFoundationObjc",
+    visibility = ["//visibility:public"],
+)
